@@ -1,0 +1,308 @@
+/* =========== GOOGLE FONTS =========== */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap');
+
+:root {
+  /* ==== COLORS ==== */
+
+  /* ==== PRIMARY ==== */
+  --Pink: hsl(322, 100%, 66%);
+
+  /* ==== NEUTRAL ==== */
+  --LightCyan: hsl(193, 100%, 96%);
+  --DarkCyan: hsl(192, 100%, 9%);
+  --GrayishBlue: hsl(208, 11%, 55%);
+
+  /* ==== FONTS ==== */
+  --Poppins: 'Poppins', sans-serif;
+  --OpenSans: 'Open Sans', sans-serif;
+
+  /* ==== FONT WEIGHT ==== */
+  --font-Poppins: 600;
+  --font-regular-OpenSans: 400;
+  --font-bold-OpenSans: 700;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* ===== BASE ===== */
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--OpenSans);
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* ===== REUSABLE CSS CLASSES ===== */
+.grid {
+  display: grid;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+}
+
+.hide-for-desktop {
+  display: none;
+}
+
+/*  ===== HEADER AND NAVIGATION ===== */
+header {
+  min-height: 100vh;
+  background-color: var(--LightCyan);
+  background-image: url('../images/bg-hero-mobile.svg');
+  padding: 1.5rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav img {
+  width: 110px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: var(--font-bold-OpenSans);
+  color: var(--DarkCyan);
+  background-color: white;
+  padding: 6px 25px;
+  border-radius: 32px;
+  box-shadow: 0 0 3px 0 var(--GrayishBlue);
+}
+
+.title {
+  padding: 4rem .75rem 3rem;
+  row-gap: 4rem;
+}
+
+.title h1 {
+  font-size: 25px;
+  font-family: var(--Poppins);
+  text-align: center;
+  color: var(--DarkCyan);
+}
+
+.title p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
+  color: var(--DarkCyan);
+}
+
+.button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.button button {
+  width: 80%;
+  padding: 10px 0;
+  border-radius: 32px;
+  font-family: var(--OpenSans);
+  font-weight: var(--font-bold-OpenSans);
+  color: white;
+  font-size: 13px;
+  background-color: var(--Pink);
+} 
+
+.img img {
+  width: 100%;
+}
+
+.grow__together {
+  margin: 3.5rem 1.5rem;
+  box-shadow: 0 0 5px 0 var(--GrayishBlue);
+  border-radius: 8px;
+}
+
+.grow__first {
+  padding: 3rem 1.5rem;
+}
+
+.grow__first img {
+  width: 100%;
+}
+
+.text {
+  margin-top: 3rem;
+}
+
+.text h2 {
+  text-align: center;
+  color: var(--DarkCyan);
+  font-size: 22px;
+  font-family: var(--Poppins);
+}
+
+.text p {
+  text-align: center;
+  font-size: 15px;
+  color: var(--DarkCyan);
+  line-height: 1.5;
+  color: var(--GrayishBlue);
+}
+
+/* ====== MEDIA QUERY ====== */
+@media screen and (max-width: 320px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .title h1 {
+    padding: 0 5rem
+  }
+
+  .title p {
+    padding: 0 4rem;
+  }
+
+  .button button {
+    width: 50%;
+  }
+
+  .img img {
+    width: 80%;
+    justify-self: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hide-for-mobile {
+    display: none;
+  }
+
+  .hide-for-desktop {
+    display: block;
+  }
+
+  header {
+    min-height: 50vh;
+    background-image: url('../images/bg-hero-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  nav img {
+    width: 120px;
+  }
+
+  nav a {
+    padding: 7px 35px;
+  }
+
+  .title {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .title h1 {
+    text-align: initial;
+    padding: 0 2rem 0 0;
+  }
+
+  .title p {
+    text-align: initial;
+    padding: 0 3rem 0 0;
+    font-size: 13px;
+  }
+
+  .button {
+    text-align: initial;
+  }
+
+  .button button {
+    width: 60%;
+  }
+
+  .img img {
+    width: 100%;
+  }
+
+  .grow__together {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .grow__first , .grow__second {
+    padding: 2rem;
+  }
+
+  .grow__second img {
+    width: 100%;
+  }
+
+  .text h2 , .text p {
+    text-align: initial;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .title {
+    padding: 2rem 0 3rem;
+  }
+
+  .title h1 {
+    font-size: 32px;
+    padding: 0 20rem 0 0;
+  }
+
+  .title p {
+    font-size: 18px;
+    padding: 0 12rem 0 0;
+  }
+
+  .button button {
+    width: 35%;
+    padding: 12px 0;
+  }
+
+  .img {
+    margin-top: 3rem;
+  }
+
+  .grow__together {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grow__first , .grow__second {
+    padding: 3rem 6rem;
+  }
+
+  .text h2 {
+    font-size: 30px;
+  }
+
+  .text p {
+    font-size: 16px;
+    padding: 0 6rem 0 0;
+  }
+}
